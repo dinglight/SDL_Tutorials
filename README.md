@@ -2,7 +2,7 @@
 
 1. install sdl2 on ubuntu
 ```
-sudo apt-get install libsdl2-dev
+sudo apt-get install libsdl2-dev libsdl2-image-dev
 ```
 2. build
 ```
