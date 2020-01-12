@@ -7,16 +7,15 @@ class Game
 public:
     Game();
     ~Game();
-
-    bool IsRunning() const;
-
-    bool Init();
-    void HandleEvents();
-    void Update();
-    void Render();
-    void Clean();
+    bool Initialize();
+    void RunLoop();
+    void Shutdown();
 private:
-    bool m_running;
+    void ProcessInput();
+    void UpdateGame();
+    void GenerateOutput();
+private:
+    bool m_is_running;
     SDL_Window* m_window;
     SDL_Renderer* m_renderer;
 };

@@ -1,20 +1,13 @@
-#include <iostream>
 #include "Game.h"
 
 
-int main()
+int main(int argc, char** argv)
 {
     Game game;
-    if (!game.Init()) {
-        std::cout << "Failed to initialize!" << std::endl;
-    } else {
-        while (game.IsRunning()) {
-            game.HandleEvents();
-            game.Update();
-            game.Render();
-        }
+    bool success = game.Initialize();
+    if (success) {
+        game.RunLoop();
     }
-    game.Clean();
+    game.Shutdown();
     return 0;
 }
-
